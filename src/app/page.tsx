@@ -34,11 +34,11 @@ const App = () => {
 
   useEffect(() => {
     if (shownCount === 2) {
-      let opened = gridItems.filter(item => item.shown === true);
+      const opened = gridItems.filter(item => item.shown === true);
       if (opened.length === 2) {
         if (opened[0].item === opened[1].item) {
-          let tmpGrid = [...gridItems];
-          for (let i in tmpGrid) {
+          const tmpGrid = [...gridItems];
+          for (const i in tmpGrid) {
             if (tmpGrid[i].shown) {
               tmpGrid[i].permanentShown = true;
               tmpGrid[i].shown = false;
@@ -49,8 +49,8 @@ const App = () => {
         }
         else {
         setTimeout(() => {
-          let tmpGrid = [...gridItems];
-          for(let i in tmpGrid) {
+          const tmpGrid = [...gridItems];
+          for(const i in tmpGrid) {
             tmpGrid[i].shown = false;
           }
           setGridItems(tmpGrid);
@@ -75,7 +75,7 @@ const App = () => {
     setShownCount(0);
     //passo 2 - criar o grid
     //2.1 criar um grid vazio
-    let tmpGrid: GridItemType[] = [];
+    const tmpGrid: GridItemType[] = [];
     for (let i = 0; i < (items.length * 2); i++) {
       tmpGrid.push({
         item: null,
@@ -100,7 +100,7 @@ const App = () => {
 
   const handleItemClick = (index: number) => {
     if (playing && index !== null && shownCount < 2) {
-      let tmpGrid = [...gridItems];
+      const tmpGrid = [...gridItems];
       if (tmpGrid[index].permanentShown === false && tmpGrid[index].shown === false) {
         tmpGrid[index].shown = true;
         setShownCount(shownCount + 1);

@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 type Props = {
     label: string;
-    icon?: any | HTMLImageElement;
+    icon?: any;
     onclick: React.MouseEventHandler<HTMLDivElement>;
 }
 
