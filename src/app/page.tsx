@@ -106,7 +106,7 @@ const App = () => {
         setShownCount(shownCount + 1);
       }
       setGridItems(tmpGrid);
-    }
+    } 
   }
 
   return (
